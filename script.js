@@ -1,6 +1,1 @@
-const links = document.querySelectorAll('nav a');
-links.forEach(link => {
-  link.addEventListener('click', () => {
-    document.querySelector('nav').classList.remove('open');
-  });
-});
+const bar=document.querySelector('.progress');const reveals=document.querySelectorAll('.reveal');function update(){const h=document.documentElement.scrollHeight-innerHeight;bar.style.width=(h>0?(scrollY/h)*100:0)+'%'}window.addEventListener('scroll',update);update();const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});reveals.forEach(x=>observer.observe(x));const menu=document.querySelector('.menu');const nav=document.querySelector('nav');menu.addEventListener('click',()=>{nav.classList.toggle('open')});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
