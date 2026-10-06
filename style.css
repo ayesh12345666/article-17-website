@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --maroon: #6f1725;
+  --deep: #170b0e;
+  --cream: #f5f0ea;
+  --paper: #fffdf9;
+  --muted: #756d6d;
+  --line: rgba(23,11,14,.15);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--deep); line-height: 1.6; }
+.nav { position: sticky; top: 0; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 18px 6%; background: rgba(255,253,249,.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.brand { color: var(--maroon); font-weight: 700; letter-spacing: .14em; text-decoration: none; }
+nav { display: flex; gap: 28px; }
+nav a { color: var(--deep); text-decoration: none; font-size: .88rem; }
+nav a:hover { color: var(--maroon); }
+.hero { min-height: 88vh; padding: 13vh 10% 10vh; display: flex; flex-direction: column; justify-content: center; background: var(--cream); }
+.eyebrow, .section-label { color: var(--maroon); font-size: .75rem; font-weight: 700; letter-spacing: .16em; }
+.hero h1, h2 { font-family: 'Playfair Display', serif; line-height: 1.02; letter-spacing: -.035em; }
+.hero h1 { max-width: 900px; font-size: clamp(4rem, 10vw, 8.5rem); margin: 22px 0; }
+h1 span, h2 span { color: var(--maroon); }
+.hero-text { max-width: 650px; color: #4e4747; font-size: 1.1rem; margin-bottom: 30px; }
+.button { width: fit-content; background: var(--maroon); color: white; padding: 13px 21px; text-decoration: none; border-radius: 2px; font-weight: 600; }
+.section { padding: 110px 10%; }
+.section-label { margin-bottom: 55px; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10%; }
+h2 { font-size: clamp(3rem, 6vw, 6rem); }
+.copy { max-width: 650px; font-size: 1.05rem; }
+.quote-card { margin-top: 35px; padding: 30px; border-left: 3px solid var(--maroon); background: var(--cream); }
+.quote-card span { color: var(--maroon); font-size: .75rem; font-weight: 700; letter-spacing: .12em; }
+.quote-card p { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin: 12px 0; }
+.quote-card small { color: var(--muted); }
+.dark { background: var(--deep); color: white; }
+.dark .section-label { color: #d79aa4; }
+.dark h2 span { color: #d79aa4; }
+.cards, .examples, .action-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 55px; }
+.cards article { padding: 32px; border: 1px solid rgba(255,255,255,.16); min-height: 230px; }
+.cards b { color: #d79aa4; font-size: .8rem; }
+.cards h3, .examples h3 { margin: 40px 0 10px; font-size: 1.4rem; }
+.list { list-style: none; margin-top: 30px; border-top: 1px solid var(--line); }
+.list li { padding: 16px 0; border-bottom: 1px solid var(--line); }
+.list li::before { content: '→ '; color: var(--maroon); font-weight: 700; }
+.light { background: var(--cream); }
+.examples div { padding: 35px; background: white; }
+.examples span { color: var(--maroon); font-size: 2.2rem; }
+.examples h3 { margin-top: 25px; }
+.sdg-list { display: grid; gap: 10px; margin-top: 30px; }
+.sdg-list span { border: 1px solid var(--line); padding: 15px 18px; }
+.action-grid { grid-template-columns: repeat(2,1fr); }
+.action-grid p { border-top: 1px solid rgba(255,255,255,.2); padding: 20px 0; }
+.final { text-align: center; padding: 140px 10%; }
+.final h2 { margin: 25px auto; }
+.source-note { color: var(--muted); margin-top: 20px; }
+footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px 6%; background: #0d0709; color: #c9bfc0; font-size: .75rem; letter-spacing: .05em; }
+
+@media (max-width: 760px) {
+  nav { display: none; }
+  .hero { padding-left: 7%; padding-right: 7%; }
+  .section { padding: 80px 7%; }
+  .grid, .cards, .examples, .action-grid { grid-template-columns: 1fr; }
+  .section-label { margin-bottom: 35px; }
+  .hero h1 { font-size: clamp(3.2rem, 16vw, 6rem); }
+  footer { flex-direction: column; }
+}
